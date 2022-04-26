@@ -52,3 +52,15 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/stilleshan/Serv
 - Docker [stilleshan/serverstatus](https://hub.docker.com/r/stilleshan/serverstatus)
 - 原版项目Github [ToyoDAdoubi/ServerStatus-Toyo](https://github.com/ToyoDAdoubi/ServerStatus-Toyo)
 - Dockerfile参考 [cppla/ServerStatus](https://github.com/cppla/ServerStatus)
+
+### 2022-04-26更新
+
+服务端搭建
+```
+docker run -d --name=serverstatus --restart=always -p 7777:80 -p 35601:35601 -v ~/ServerStatus/config.json:/ServerStatus/server/config.json -v ~/ServerStatus/web:/usr/share/nginx/html stilleshan/serverstatus
+```
+
+客户端搭建
+```
+wget -N --no-check-certificate https://github.tothis.pw/https://raw.githubusercontent.com/dalaolala/ServerStatus2/master/status.sh && chmod +x status.sh && bash status.sh c
+```
